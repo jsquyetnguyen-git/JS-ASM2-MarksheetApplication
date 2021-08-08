@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Class Marksheet</title>
+</head>
+
+<body>
+    <!-- Title -->
+    <div id="title" class="container shadow">
+        <i style="color: #ffffff;" class="bi bi-journals"></i>
+        <h2>CLASS MARKSHEET</h2>
+    </div>
+
+    <!-- Function -->
+    <div id="inputform" class="container shadow">
+        <div class="row">
+            <!-- Form nhap diem -->
+            <div class="col-lg-4 border">
+                <h6>ENTER SUB SCORED</h6>
+                <!-- Name -->
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Name</span>
+                    </div>
+                    <input id="get-name" type="text" class="form-control" placeholder="Nguyễn Văn A">
+                </div>
+
+                <!-- MATH -->
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Math</span>
+                    </div>
+                    <input id="get-mathscore" type="text" class="form-control" placeholder="0-10">
+                </div>
+                <!-- PHYSICS -->
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Physics</span>
+                    </div>
+                    <input id="get-physcore" type="text" class="form-control" placeholder="0-10">
+                </div>
+
+                <!-- CHEMISTRY -->
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Chemistry</span>
+                    </div>
+                    <input id="get-chescore" type="text" class="form-control" placeholder="0-10">
+                </div>
+
+                <div class="button pb-2 text-center" id="addbutton">
+                    <button id="addBtn" type="button" class="btn btn-outline-secondary btn-sm">+ Add</button>
+                    <button id="clearBtn" type="button" class="btn btn-outline-secondary btn-sm">- Clear</button>
+                </div>
+
+            </div>
+
+            <!-- Cac nut chuc nang -->
+            <div class="col-lg-8 border">
+                <div class="input-group mx-auto" id="search">
+                    <input id="keyinput" type="search" class="form-control rounded" placeholder="Nguyễn Văn A" />
+                    <button id="searchBtn" type="button" class="btn btn-outline-secondary">Search</button>
+                </div>
+
+                <div class="functionButton pb-3 text-center">
+                    <button id="average" type="button" class="btn btn-outline-secondary btn-sm">Average marks cal</button>
+                    <button id="showGoodSt" type="button" class="btn btn-outline-secondary btn-sm">Highlight good student</button>
+                    <button id="resetDisplay" type="button" class="btn btn-outline-secondary btn-sm">Show all student</button>
+                    <button id="getPDF" type="button" class="btn btn-outline-secondary btn-sm">Get marksheet PDF</button>
+                    <button id="sort" type="button" class="btn btn-outline-secondary btn-sm">Sort by name</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div id="table" class="container border shadow">
+        <div class="row table-responsive">
+            <table id="data-table" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Math</th>
+                        <th>Physics</th>
+                        <th>Chemistry</th>
+                        <th>Average</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="stt"></td>
+                        <td id="name-cell">Nguyen Van Quyet</td>
+                        <td id="math-cell">10</td>
+                        <td id="phy-cell">10</td>
+                        <td id="che-cell">10</td>
+                        <td id="average-cell">?</td>
+                        <td><i onclick="deleteRow(this)" class="bi bi-trash"></i></td>
+                    </tr>
+                    <tr>
+                        <td id="stt"></td>
+                        <td id="name-cell">Tran Van An</td>
+                        <td id="math-cell">10</td>
+                        <td id="phy-cell">8</td>
+                        <td id="che-cell">10</td>
+                        <td id="average-cell">?</td>
+                        <td><i onclick="deleteRow(this)" class="bi bi-trash"></i></td>
+                    </tr>
+                    <tr>
+                        <td id="stt"></td>
+                        <td id="name-cell">Nguyen Anh Tam</td>
+                        <td id="math-cell">5</td>
+                        <td id="phy-cell">6</td>
+                        <td id="che-cell">10</td>
+                        <td id="average-cell">?</td>
+                        <td><i onclick="deleteRow(this)" class="bi bi-trash"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
